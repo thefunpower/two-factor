@@ -58,6 +58,18 @@ echo  'verify: ' . $factor->verify('437388');
 exit;
 ~~~
 
+## 演示
+
+~~~
+$factor = new \TwoFactor();
+$factor->label = "xda.com";
+$factor->init();
+$text = $factor->text();
+echo "<img src='/sys/qr?data=" . urlencode($text) . "' />"; 
+$factor->secret = 'Q5G7JQBWOA4EM6UO';
+echo  'verify: ' . $factor->verify('437388');
+~~~
+
 ### 开源协议 
 
 [Apache License 2.0](LICENSE)
