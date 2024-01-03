@@ -1,6 +1,11 @@
+# 下载并安装microsoft-authenticator应用
+
+[下载并安装microsoft-authenticator应用](https://support.microsoft.com/zh-cn/account-billing/%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85microsoft-authenticator%E5%BA%94%E7%94%A8-351498fc-850a-45da-b7b6-27e523b8702a)
+
 # 安装
 
 在composer.json中添加
+
 ~~~
 "thefunpower/two-factor": "dev-main" 
 ~~~
@@ -10,7 +15,7 @@
 1.初始化
 ~~~
 $factor = new \TwoFactor();
-$factor->label = "xda.com";
+$factor->label = "验证器名称";
 $factor->init();
 ~~~
 
@@ -52,8 +57,8 @@ echo $res->getString();
 
 ~~~ 
 $factor = new \TwoFactor();
-$factor->label  = "xda.com";
-$factor->secret = 'Q5G7JQBWOA4EM6UO';
+$factor->label  = "验证器名称";
+$factor->secret = '秘钥';
 echo  'verify: ' . $factor->verify('437388');
 exit;
 ~~~
@@ -62,11 +67,11 @@ exit;
 
 ~~~
 $factor = new \TwoFactor();
-$factor->label = "xda.com";
+$factor->label = "验证器名称";
 $factor->init();
 $text = $factor->text();
 echo "<img src='/sys/qr?data=" . urlencode($text) . "' />"; 
-$factor->secret = 'Q5G7JQBWOA4EM6UO';
+$factor->secret = '秘钥';
 echo  'verify: ' . $factor->verify('437388');
 ~~~
 
