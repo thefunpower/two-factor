@@ -1,0 +1,21 @@
+{
+    "name": "thefunpower/two-factor",
+    "type": "library",
+    "description": "twofactor",
+    "keywords": ["php"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "kenken"
+        }
+    ],
+    "require": {  
+       "robthree/twofactorauth": "^2",
+       "endroid/qr-code": "^4"
+    },
+    "autoload": { 
+        "files": [ 
+            "./TwoFactor.php"
+        ]
+    }
+}
